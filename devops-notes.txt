@@ -1,0 +1,118 @@
+8th sep 2025 : 
+
+Linux ?
+
+it's os , 
+
+it's opensource os , having multi destros 
+
+
+taking command and gives the output on terminal 
+
+
+
+======================
+
+
+Linux --> linus Torvalds  --> 
+unix --> 
+
+git 
+
+it's an opensource  operating system, it has both text and graphical based operating system 
+
+
+it's for free 
+
+
+merits : 
+
+it's open source , 
+
+
+security : 
+
+stability and reliability : 
+
+package mgt   -> apt snap dpkg , 
+
+
+==============
+
+software compatibility 
+
+driver support : 
+
+user interface and desktop environment 
+
+learning curve : 
+
+
+==================================================================
+
+
+fedora and ubuntu 
+amazon Linux 
+
+
+2 Linux distros or distributions or flavours  Families 
+
+
+1.debian Linux distribution family 
+2.fedora Linux distribution family 
+
+
+1.debian Linux distribution family   -> apt or apt-get  or dpkg 
+Debian 
+ubuntu
+kali 
+
+2.fedora Linux distribution family --> yum or rpm 
+fedora
+amazon Linux
+cent os 
+
+
+snap 
+
+zypper -> openSUSE 
+
+package mgt 
+
+in k8s 
+
+
+distroless 
+alpine  fedora or 
+busybox apt
+scratch 
+
+
+
+apt install -y git
+
+
+in mac os : 
+
+brew --> 
+
+===========================================
+
+
+sudo --> admin or root access or 
+
+
+
+sudo <pkg mgr> <install>/uninstall/update   <tool> -y 
+
+sudo apt install git -y 
+
+=======================
+
+
+what is Linux directory structure and purpose of each directories ?
+create github account and fork the repo 
+============================================
+
+
+  
