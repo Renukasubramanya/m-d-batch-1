@@ -113,6 +113,1536 @@ sudo apt install git -y
 what is Linux directory structure and purpose of each directories ?
 create github account and fork the repo 
 ============================================
+usage of linux
+
+Merits of Linux:
+
+Open Source:
+
+Merits: Linux is open-source, meaning its source code is freely available and can be modified and distributed. This fosters collaboration and community-driven development.
+
+Benefits: Users can customize the operating system to suit their needs, and security vulnerabilities can be addressed more rapidly.
+
+
+Security:
+
+Merits: Linux is known for its robust security features. Its multi-user environment and permissions system help protect against malware and unauthorized access.
+
+Benefits: Linux is less susceptible to viruses and malware compared to some other operating systems, making it a preferred choice for servers and critical infrastructure.
+
+Stability and Reliability:
+
+Merits: Linux is known for its stability and reliability. It can run for extended periods without needing to be rebooted, making it suitable for servers and critical systems.
+
+Benefits: System crashes are less frequent, and the system tends to handle heavy workloads efficiently.
+
+
+Performance:
+
+Merits: Linux generally performs well, even on older hardware. It can be configured for specific use cases, making it efficient for various applications.
+
+Benefits: Linux is often used in resource-constrained environments and can provide good performance for tasks ranging from desktop use to server applications.
+
+
+Package Management:
+
+Merits: Linux distributions use package managers that simplify software installation, updates, and removal. This centralized approach ensures software is installed with dependencies, reducing compatibility issues.
+
+Benefits: It's easier to manage software and keep the system up-to-date.
+
+Demerits of Linux:
+------------------
+
+Software Compatibility:
+
+Demerits: Some proprietary software and applications are not available for Linux. Users may face challenges finding alternatives or using compatibility layers like Wine.
+
+Drawbacks: Gaming and certain professional applications may have limited support on Linux.
+
+Driver Support:
+
+Demerits: While Linux supports a wide range of hardware, some manufacturers may not provide Linux drivers. This can lead to compatibility issues for specific devices.
+
+Drawbacks: Users may need to rely on community-developed or generic drivers, which may not offer the same level of performance or features as official drivers.
+
+User Interface and Desktop Environments:
+
+Demerits: The variety of desktop environments and user interfaces in Linux can be overwhelming for new users. It may take time to find one that suits individual preferences.
+
+Drawbacks: The user experience may not be as consistent as in some other operating systems.
+
+Learning Curve:
+
+Demerits: For users accustomed to other operating systems, the Linux command line interface can be intimidating. Learning the commands and system configurations may take time.
+
+Drawbacks: The learning curve can be a barrier for some users, especially those who are not familiar with the command-line interface.
+
+Limited Support for Certain Software:
+
+Demerits: Some industry-specific or niche software may not have Linux versions or equivalents. This can be a significant drawback for professionals in certain fields.
+
+Drawbacks: Users may need to resort to virtualization or dual-boot setups to run essential software that is not natively supported on Linux.
+
+===============================
+
+
+linux distributions :
+
+2 linux distribution families:
+
+1.debian family
+
+2.fedora family
+
+1.debian distribution family ( apt or apt get  )
+debian
+ubuntu 
+
+2.fedora distribution family ( yum or dnf )
+
+fedora
+kali  ->
+open suse
+Redhat linux 
+cent os
+alma linux
+
+amazon linux 2023
+amazon linux 2 
+
+alpine -> apk 
+
+package mgt tool 
+
+update, upgrade, install, unintall, 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+linux distributions 
+
+
+2 types of linux distribution families
+
+1.debian  linux distribution families  -> apt  or apt-get 
+2.fedora  linux distribution families  -> yum 
+
+1. debian linux families  -> apt install git -y
+debian  
+ubuntu 
+
+2.fedora family
+fedora
+centos
+opensuse
+amazon linux 2    -> yum install git -y  
+kali linux
+alma linux
+
+alpine linux ->  independent linux distribution , apk -> apk install git -y 
+busy box -> light weight linux distro for linux utilities .
+scratch 
+
+
+
+-----------------------------------------------------------------------------------------------------------------------------
+
+linux os
+
+os -> combination  of shell and kernal 
+
+it's an interface user and system
+
+
+kernel it's software , it's heart  of operating software , core component of os 
+
+linux os depends on kernel 
+
+system depends os 
+
+
+
+html
+source code  web application   webserver
+
+home.html 
+<html>
+<body>
+<h1>manjuTechPvtLtd</h1>
+<p> this is software solutions </p>
+</body>
+</html> 
+
+
+sample.py 
+
+a="welocome  to linux"
+print(a)
+
+
+computer  , 
+
+.java
+.py 
+
+execution 
+
+jvm
+pvm 
+jre 
+
+a=10
+print(a,type(a))
+
+source code  compiling             compliler                                                    pvm                            
+    py                             .pyc,javac , complied code or byte code           processor/ram/rom
+                                
+
+
+
+
+
+
+
+
+
+programming execution process
+
+ 
+                 compiling phase                                executing phase                 pvm /jvm  /processor/cpu      
+sample.py                             compiler    
+                                      compiled code                                                   +v 0,1 
+                                      byte code (pyc,javac)                                            o  
+
+
+
+
+
+
+
+
+
+
+
+
+
+ls  -> listing the files and folders
+
+
+ll   -> longlist files and folders
+
+
+
+
+
+
+source code : 
+
+
+
+
+
+Linux Shell:
+- default shell in Linux is BASH.
+
+
+ in os there is a special program is called "shell".
+- shell is interpretor
+- shell takes the commands from user and execute it.
+- and it will gives the result as user understandable.
+
+linux kernal  
+
+
+linux distributions
+
+
+
+
+amazon linux 2 -> rpm , snap , yum ,dnf
+
+linux package mgrs with different linux flavours  
+
+APT (Advanced Package Tool) - debian, ubuntu
+DNF (Dandified YUM) or yum (older version)   - fedora, redhat,centos,
+Zypper - pkg mgr to openSUSE   -> sudo zypper install git -y
+Snap -> pkg mgr to debian and fedora as well 
+RPM (Red Hat Package Manager) -> fedora,centos and so an
+DPKG (Debian Package) -> debian and ubuntu
+
+
+
+RPM VS YUM 
+
+RPM -> ONLY TOOL, not going to install dependencies with it 
+Yum
+
+git pythons
+
+
+
+
+RPM VS YUM 
+
+
+brew (Homebrew package manager) -> mac os --> sudo brew intall git 
+
+macOS: Command(cmd)  (⌘) + C  -> copy the files  ls,ps,rm, mv ,cp,
+
+Standard: Ctrl + C  -> copy the files 
+
+port ( MacPorts package manager) -> mac os -> 
+
+sudo -i or sudo su -  --> to get into root user
+
+
+==================================================================================================================================
+LINUX FILE/DIRECTORY /FOLDERS STRUCTURE
+--------------------------
+most essential directories path and devops tools which are stored in it,  that should devops remember, cos where all executable files and storage directories
+
+
+/ (root directory):
+
+The top-level directory in the Linux file system hierarchy.
+All other directories are subdirectories of the root directory.
+---
+
+🗃️ /bin: Binaries - This directory holds the essential user command binaries that all users can access.
+
+Contains essential binary executable files accessible to all users.
+Common commands like ls, cp, mv, yum apt,rm, etc., reside here. sh
+
+---
+⚙️ /etc: System Configuration - Houses the system configuration files, acting as the control panel on Linux.
+
+Contains system-wide configuration files.
+Important files like passwd (user account information), hosts (DNS resolution), sudoers (sudo configurations), and group more.
+---
+
+🏠 /home: User Home Directories - Contains the home directories for users and other accounts.
+Home directories for regular users are located here.
+Each user has a subdirectory with their username.
+---
+📁 /var: Variable Files - This is the variable data directory storing changing data like logs, mails, print spools, etc.
+and journalctl -> to check the log files in your local machine or system .
+
+Contains variable data files, such as log files (/var/log) and mail (/var/mail).
+Also includes temporary files, caches, and other variable data.
+---
+👥 /usr: User Binaries - Contains multi-user utilities, applications, and libraries.
+
+Contains user-related programs and data, usually read-only data (except for /usr/local).
+Common directories within /usr include /usr/bin, /usr/lib, /usr/share, etc.
+
+
+git 
+
+git add 
+
+ls 
+
+/bin/bash
+usr/bin/bash
+
+
+---
+
+🔧 /sbin: System Binaries - Contains the essential binaries used by the system administrator for system maintenance and troubleshooting.
+
+Similar to /bin, but it contains essential system binaries for the root user (administrative commands).
+Commands like fdisk, ifconfig, reboot, etc., are stored here.
+---
+🎁 /opt: Optional Software - Stores optional or additional software from vendors.
+cd /opt -- installing the tools ,sonarqube,tomacat, nexus and so on
+
+Typically used for the installation of optional (third-party) software.
+Some software packages, especially those not installed via the package manager, might reside here.
+--
+🔨 /srv: Service Data - This directory contains server-specific services related data.
+
+Contains site-specific data served by the system.
+For example, web server files(nginx)can be stored here.
+---
+🗑️ /tmp: Temporary Files - This directory stores temporary files created by the system and users.
+
+A temporary directory accessible to all users, where they can store temporary files.
+Files in this directory are usually deleted upon reboot.
+---
+📊 /proc: Process Information - A virtual directory detailing system and process information.
+
+A virtual filesystem that provides information about running processes and system configuration.
+It's not a real directory with disk storage but rather a dynamic interface.
+---
+
+
+💽 /dev: Device Files - Home to all device files, such as hard disks, USB, CD-ROM, etc.
+null file 
+
+Contains device files that represent hardware devices on the system.
+These files are used to interact with hardware components.
+Remember, these are just some of the essential directories. Linux has a vast file system hierarchy, and depending on your specific tasks and the distribution you are using, you may encounter additional directories or variations in their organization. Understanding these directories and their purposes will provide a solid foundation for your work as a DevOps engineer.
+
+------
+
+📚 /lib: System Libraries - Houses library files that are needed by the system and the users.
+
+📝 /mnt: Mount Directory - Used for mounting other temporary file systems.
+
+💿 /media: Removable Media - Acts as a temporary mount directory for removable devices.
+
+🚀 /boot: Boot Files - Contains boot loader related files.
+
+👑 /root: Root Home - This is the home directory for the root user.
+
+🔌 /run: Application Information - A tmpfs file system that contains application information.
+
+🧑‍🔬 /usr/local: User Local - Contains user's programs that are installed from the source.
+
+📦 /lib64: 64-bit Libraries - This is where the 64-bit library files are stored.
+
+
+
+==================================================================================================================================
+
+
+give all devops tools and  their directory path in linux 
+
+there are numerous DevOps tools available, and they can be installed in different locations in the Linux file system. The following is a list of some popular DevOps tools along with their common installation paths:
+
+tools -> executable path /bin and configuration path /etc
+
+
+Git 
+
+Path: Usually installed system-wide, binaries in /usr/bin/git and configuration files in /etc/gitconfig.
+User configuration: ~/.gitconfig.
+
+Ansible 
+
+Path: Executable located in /usr/bin/ansible.
+Configuration: /etc/ansible/ansible.cfg.
+Playbooks and inventory files  can be stored anywhere, often in the user's working directory.
+
+
+Puppet
+
+Path: Executables located in /opt/puppetlabs/bin.
+Manifests and modules are stored in /etc/puppetlabs/code.
+
+Chef 
+
+Path: Executables located in /opt/chef/bin.
+Cookbooks and related files are stored in /etc/chef or /var/chef.
+
+
+Jenkins  -> /var/lib/jenkins/workspace
+
+Path: The installation path may vary, but commonly found in /var/lib/jenkins.
+Configuration: /etc/default/jenkins or /etc/sysconfig/jenkins.
+
+Docker
+
+Path: Executable located in /usr/bin/docker.
+Docker images and containers are stored in /var/lib/docker by default.
+
+Kubernetes (kubectl)
+
+Path: Executable located in /usr/bin/kubectl.
+Configuration: ~/.kube/config.
+
+Terraform
+
+Path: Executable located in /usr/bin/terraform.
+Configuration files can be stored in any directory, commonly in the user's working directory (terraform.tf, variables.tf, etc.).
+
+Prometheus
+
+Path: Executable located in /usr/local/bin/prometheus.
+Configuration: /etc/prometheus/prometheus.yml.
+
+Nagios
+
+Path: Executables and configuration files are commonly found in /usr/local/nagios or /etc/nagios.
+
+
+Grafana
+
+Path: The installation path may vary, but commonly found in /usr/share/grafana.
+Configuration: /etc/grafana/grafana.ini.
+
+ELK Stack (Elasticsearch, Logstash, Kibana) in AWS
+
+Path: The installation paths may vary, but configuration files and data are typically stored in /etc/ or /var/.\
+
+==================================================================================================================================
+NAVIGATION AND DIR CONTROL COMMANDS 
+
+man -> manual page 
+
+--help
+
+
+
+
+$ -> normal user  -> id -u  -> 1000
+
+sudo -i  or su -
+
+# -> root user or admin user -> id -u  -> 0
+
+
+exit -> to go back to normal user or logout from root user 
+
+
+. 
+..
+
+/
+
+
+ll -> longlist of the files and directories 
+ls -ld */   -> to list only the directories in a directory in Linux
+
+ls -> list of all the files and directories but it doesn't show the hidden filesc(. or ..files/dir) and folders
+ls -a -> list of all the files and directories along with  hidden files and folders
+ls -l -> longlist of the files and directories
+ls -id <name of dir> -> to display the particular dir 
+ls -lh -> list out the all files and directories with size 
+ls -lR   -> to list the all folder with subfolders 
+ls -lh  .txt     -> to see the size of a file 
+ls -i    -> inode values
+ls -iltr -> full inform of files and dir with inode values
+man ls -> 
+ls -> to list the files and dirs in the local machine
+ls -l -> to display the longlist of  default files and dir
+ll    -> to display the longlist of  default and hidden files and dir
+ll -h -> to display the longlist of  default and hidden files and dir with their size , -h ( human readable format )
+ls -ltr  -> to display the longlist of  default files and dir, sort by time  with reversal order
+ls -lt   -> to display the longlist of  default files and dir, sort by time
+--------
+
+touch command
+
+touch < file name >   -> to create a empty file
+touch filename{1..30} -> to create multiple files
+
+
+---------
+echo command : to print or to display the  line ( of content )
+
+echo "some content" > samplefile.txt   -> creating a file with content , the content is redirecting or replacing . 	
+echo 'hello world' >> samplefile1  -> creating a file with content , the content is appending 
+
+echo -e '#!/bin/bash\necho "Hello world"\nthis is third line ' > sample.txt   
+
+-> here you used single quote and double quotes, so this is how creating script with some content .      \n -> new line , -e -> 
+
+
+echo >> org1.txt hello        -> creating a file with content
+echo <name of file >          - to display or print the output  of executable file 
+echo -n > newfile1.txt     ->  to make file empty ( existing file with content)
+
+
+---------
+cat command 
+
+cat -> to display the content of file
+
+cat /etc/shells -> to display the default shells in your local machine
+
+cat >> file1.txt --> interactive mode , appending the content 
+cat > file1.txt --> interactive mode 
+
+cat file1.txt>file2.txt     -> to redirect the content from one file to another existing or new file ,
+
+cat id_rsa.pub > authorized_keys
+
+cat file1.txt >> file2.txt  -> to appending the content from one file to another existing or new file
+
+
+file1
+file2 
+
+file3 
+
+
+cat file1 file2 > file3   
+
+vim   
+  
+---------
+mkdir command   -> 
+
+mkdir < dir > --> to create the dir
+
+mkdir day{1..40}      ->  to create multiple dir
+
+
+mkdir -p <maindir>/<subdir>  
+
+mkdir dir1 && cd dir1  -> used to create and switch to the same dir ,
+
+mkdir dir2 && touch dir2/file1.txt   -> to create a folder and create new file in the same folder (..)
+
+mkdir dem6 && echo "my fourth demo session" >> dem6/file5.txt    -> used to create new dir with content file 
+
+1.1.2.
+
+incremental changes in version is called upgrade 
+
+
+&& and | 
+
+-----
+
+rm commands 
+
+
+rm  --> to delete/remove  the file 
+
+rmdir <dir>  --> to delete the empty dir only
+
+rm -i <file name >   -- it's going to ask user to confirmation before removing the files ( yes/y or no/n )
+
+rm -R <file name >/dir  --> to delete the dir recursively 
+
+rm -rf <dir>  --> to delete the dir with content
+
+rm -rf file_name 
+
+
+---> dec-15 --------------------------------------
+
+
+| -> Temporary storage  and && -> 
+
+&& -> to run the multiple commands on terminal 
+
+
+
+
+
+
+journalctl | tail -n 3 
+
+---------
+cd commands  :
+
+cd -> used the changing the dir
+cd or cd ~ --> to go back to home dir
+cd - -> used to go back recent worked dir, the dir which u entered most recently 
+cd .. -> used to go back previous dir
+cd ../.. -> it takes you to previous dir, with two steps back 
+
+--------
+
+--------
+
+mv command  
+
+
+mv < old file>  <new file>
+
+dont have particular command for rename the file or dir 
+
+mv 
+
+mv --> used to move the file/dir from one dir to another dir and also used to rename the file/dir
+--------
+
+cp command -> to copy the files or content of file or dir form source point to destination point 
+
+cp 
+-----------------
+
+networking commands :
+
+
+httpd webserver
+
+html files/css files  to create web pages - webserver http/nginx
+
+
+publicip:90
+publicip:90
+publicip:89
+
+
+
+https  : 443
+
+http : 80
+
+system 
+httpd : 80
+tomcat 8080
+nginx : 80
+
+jenkins : 8080
+
+
+
+grep/find/cut/sed/awk
+
+
+hostport:containerip
+8989:80   -> amazon.com
+8983:80   -> aws.amazon.com
+79908:80  -> shopping.amazon.com
+
+
+
+nginx:80
+
+amazon.com   8888: 80            47477
+aws.amazon.com 9989: 80             8484
+shopping.amazon.com  8848:80       448
+
+--------------------------
+process mgt commands 
+
+ps
+
+
+
+ps -ef  OR ps aux   ->  detailed list of all processes running on the system,
+
+
+
+ps aux | grep nginx    -> Filter Processes by Name
+
+sudo lsof -i :80    -> This command is used to list information about files that are currently opened by processes.
+
+sudo kill PID
+
+sudo kill -9 PID   --> -9 (forcefully)
+
+top : to display linux tasks and running process 
+
+sar : ( system activity report ), used to collect the CPU,MEMORY AND I/O usage  (not found in bash shell )
+
+
+
+---------------------------------------------------------------------------------------------------
+wc     -> wc/word count used to count the lines words and characters in a file
+
+manjunathachar@manjunathachar-k-t:~$ wc var1.sh 
+
+ 19  40 260 var1.sh
+ 
+ 
+ wc -L  var1.sh     -> display the big line or longest line or line lenth in  file 
+ 
+ cat -n file.txt     -> to display the file content in chronological order,
+ 
+ tac file.txt.sh  -> to display the content of file in reversal order
+ 
+ 
+more file1.txt     -> to display more information of particular file , can tab in lapltop
+
+ex: the file which conatains 1000 lines , 501th 
+
+
+
+more -s  file1.txt     -> to surface the content in the file or remove the space or gap in the file 
+
+more +40 file1.txt    -> to start the files from line number 40 in the file 
+
+less file1.txt     -> to start the files from line number 40 in the file , to display big file we use less command
+
+head file1.txt or head -n 5 file1.txt     -> used to print 1st 10 lines of the file , we customised based on changing the numbers
+
+tail file1.txt       -> to get last 1o lines of the file 
+
+/var/toolname/filename/
+
+journalctl | tail
+-------------------
+
+
+User/Group Administration commands
+
+Note: Old password is first requested then new password is requested twice for confirmation.
+
+use sudo or root access to execute commands 
+
+useradd(debian) or adduser(Fedora)  -> creates a new user a/c -> only root user can execute this command 
+  
+passwd : changes a user's passwords
+
+cat /etc/passwd :  To view a list of users on a Linux system,
+
+
+sudo useradd username -> Creating a User
+
+
+sudo passwd username   -> Setting Password for a User:
+
+
+sudo userdel username   -> Deleting a User:
+
+Creating a Group:   
+
+sudo groupadd groupname   -> creating group 
+
+sudo groupadd developers
+
+sudo usermod -aG groupname username    -> Adding or appending  a User to a Group 
+
+sudo gpasswd -d username groupname    -> removing a user from  a specific group      
+
+
+sudo usermod -d /new/home/directory username  -> Changing a User's Home Directory:
+
+
+sudo usermod -s /path/to/new/shell username  -> Changing a User's Shell:
+
+sudo usermod -s /bin/bash john
+
+
+sudo groupdel groupname  Deleting a Group:
+
+sudo groupdel developers
+
+
+cat /etc/group   -> Listing Groups 
+
+
+id -> it's one more command which will show the user details such as his primary group and his secondary group.
+
+$  -> id -u -> 1000  -> normal user 
+#  -> id -u -> 0   -> root user 
+
+su -> to switch user and to come out from the user press CTRL+D,logout or exit.
+
+----------------------------------------------------------------------
+chmod command--> change mode 
+
+alpha/num 
+
+there are two ways to give permission to the user or group or others to access the files or directories
+
+drwxrwxr-x  3 manjunathachar manjunathachar 4096 Feb 26 17:15 newdir/
+-rw-rw-r--  1 manjunathachar manjunathachar  138 Feb 26 17:48 sample.txt
+
+
+alpha
+number   0 to 7
+
+- 
+r- read -> 4
+w - write -> 2
+x - execute -> 1 
+               7
+- = 0
+
+user                        group                           other
+r  w  x                    r w x                              r - x 
+4  2  1                    4 2  1                             4 0 1
+7                            7                                    5
+
+
+5            6        4  
+r-x         rw-       r--
+
+
+
+chmod 564 sample.txt
+
+
+
+
+
+chmod 300 roboshop 
+d -wx --- ---
+
+
+chmod 563 roboshop 
+
+d r-x rw- -wx
+  
+chomd 400 pem.file 
+-r-- --- ---
+
+
+        file or dir     user   group   others
+alpha-    -  or d       R W X  R W X   R W X
+num -                   4+2+1  4+2+1   4+2+1     ( 0 to 7)  
+group   others
+alpha-    -  or d       R W X  R W X   R W X
+num -                   4+2+1  4+2+1
+                          7      7       7         
+
+"-" > that's not allowed to access the files and folders 
+
+file1 
+
+
+- -wx rw- ---   username groupname  sizefile  file created date and time   file name
+
+
+  021 420 000
+  3    6   0  
+  
+  chmod  360 filename
+  
+  
+------------------------------------
+
+Remote Access Commands
+
+SSH (Secure Shell):   -> Connect to a remote server
+
+ssh username@remote_host 
+
+
+
+SCP (Secure Copy):   -> Copy files between local and remote systems securely: jenkins publish over ssh -> 
+
+chmod 400 my-aws-key.pem
+
+scp /path/to/local/file username@remote_host:/path/to/remote/destination   -> one server to another server
+
+scp -i /path/to/your/keyfile.pem /path/to/local/file username@ec2-instance-ip-or-dns:/path/on/ec2  -> local machine to aws-ec2
+
+
+scp -i "k8s-project.pem" /home/manjunathachar/var1.sh ec2-user@ec2-184-169-248-88.us-west-1.compute.amazonaws.com:/home/ec2-user
+
+
+scp -i "your pem file" <local server's directory path> <remote server's directory path>
+
+scp -i "amazon-linux2.pem" /home/manjunathachar/sys-update.sh ec2-user@ec2-44-223-65-183.compute-1.amazonaws.com:/home/ec2-user
+
+by default the pem has 664  private key 
+
+r -> 4
+w -> 2
+x -> 1
+
+0 to 7 
+
+- --- --- --- 
+  rwx rwx rwx
+  421 421 421
+   7   7   7 
+   
+   alpha
+   number
+   
+ -   r-- --- ---
+ f   4    0   0
+   
+ chmod 400 
+   
+   
+   
+   
+  cp
+  
+
+
+
+scp -i "my-aws-key.pem" ec2-user@ec2-34-207-173-221.compute-1.amazonaws.com:/path/on/ec2/var1.sh /path/on/local/machine  --> copy the files from ec2 to local machine.
+
+
+
+
+scp -i "my-aws-key.pem" ec2-user@ec2-34-207-173-221.compute-1.amazonaws.com:/home/ec2-user/robo-shop /home/manjunathachar/linuxdemo/newdemo1
+
+
+
+telnet : Connect to a remote server (less secure than SSH, often not recommended):
+
+telnet remote_host
+
+ssh -i username:remotehost
+
+
+----------------------------------------------------------------------
+Hardware Information Commands :
+
+free : To find the amount of free and used RAM memory in the system.
+
+du -> 
+df
+
+
+
+sonarqube , maven , 2 4 ram required , 2 , 4 cpc ,
+
+
+dmidecode -t 17  -> It give the RAM information like type of RAM(SD RAM, DRAM or DDR/2/3),Speed , Manufacture etc -> root user can perform this command 
+
+vmstat: it will gives the virtual memory statistics .
+
+
+System resource commands 
+
+Man -> manual page , metadata of the linux utilities 
+
+who -> displays the current user working on the system
+
+w -> show who is logged on and what they are doing
+
+users : displays a compact list of the users currenly logged on the system
+
+whoami : display the current user info who gave this command
+
+whereis -> path/locate the binary, source and manual page for a command
+
+date -> print or set the system date and time
+
+df ->   for entire system   report file system disk space usage -> displays the local disc drive , ssd, hdd 
+
+du -> for fils or dir estimate file space usage, it displays the detailed information of file and folder usage
+
+du -sh < dir name >   -> to see the size of directory   ( -s summarise the files and folders ) , 
+
+hostname -> show or set the system host name ,in ec2 instace -> private ip of instance 
+
+ifconfig or hostname -i or ip a  -> to find the ip address 
+
+whatis ls
+
+uptime -> how long the system has been ruuning 
+
+last  -> show listing of last logged in users 
+last root -> to get the most recently logged in as root users
+sudo lastb ->  to get the list of all bad log ins in your local machine
+  
+
+
+systemctl start <name of service >    ---> debain/ubuntu/fedora 
+
+service <name of service > start      ---> in  redhat/centos
+
+systemctl -> used to check the running services in your local machine
+
+systemctl --failed   -> used to get the failed service in the system
+
+systemctl start <name of service >  to start the service (prometheus service)
+systemctl restart <name of service >  to restart the service (prometheus service)
+systemctl reload <name of service >  to reload the service (prometheus service)
+systemctl daemon-reload  ->  whenever you make any changes in system config file , have to reload or restart the systemd or system daemon  
+systemctl status <name of service >  to check status of  the service (prometheus service)
+systemctl enable <name of service >  to enable  the service at boot,  (prometheus service)
+systemctl stop <name of service >  to stop the service (prometheus service) 
+jounalctl -> to get systemlogs 
+
+
+
+chown -> changing ownership 
+
+chown username <file or dir name >
+
+
+----------------------------------------------------------------------
+
+Archive/Data Backup Commands :
+
+zip -> If you have a bunch of files and folders and want to compress them into one archive, use zip
+
+zip archive.zip file1 file2 directory1  -> Command to Create a Zip Archive:
+
+unzip archive.zip -d destination_folder ->  unzip archive.zip -d destination_folder
+
+----
+gzip ->  If you want to compress a single file, use gzip.
+
+gzip file1  -> Command to Create a Gzip Archive:
+
+gzip -d file1.gz   ->  Command to Extract a Gzip Archive:
+
+
+rsync 
+
+---
+
+tar -> tape archive used  to compress, archive and store files and directories in local machine
+
+-c --create Create a new archive.
+-x --extract Extract files from an archive.
+-t --list List the contents of an archive.
+-f --file=ARCHIVE Use archive file or dir ARCHIVE.
+-v --verbose Verbosely list files processed
+
+
+cvf  ./name of archive file.tar  ./name of file or dir    --> to create tar file
+
+tar -cvf archive.tar file1 file2 directory1
+
+
+tar xvf name of archive file.tar  -->  to extract the tar files
+
+
+
+
+====================================
+
+Networking commands :
+
+
+manjunathachar@manjunathachar-k-t:~$ ip address show or ifconfig   -->  to see the ip address 
+
+ip route  or route --> default gateway 
+
+netstat  -rn  --> same as route 
+
+nmcli   --> to see dns resolver 
+
+cat /etc/resolv.conf   --> to see the aws name server .
+
+to find the remote network information like its ipaddress , routes , system online or not 
+
+dig google.com 
+
+nslookup( old command)   --> same as dig to get ipaddress of remote network
+
+to check the route , how it's routing, how many hops it's going to hit to reach the destination .
+
+traceroute google.com   ( install traceroute -> sudo apt-get install traceroute)
+
+Traceroute is a network diagnostic tool used to trace the route that network packets take from your computer to a destination host or server on the internet.
+
+This is a traceroute command showing the path and response times of data traveling from your computer to Google's servers. Each line represents a different network device (like routers) the data passes through each hops
+
+
+manjunathachar@manjunathachar-k-t:~$ traceroute google.com
+traceroute to google.com (142.250.205.238), 30 hops max, 60 byte packets
+ 1  192.168.0.1 (192.168.0.1)  8.222 ms  8.835 ms  13.865 ms
+ 2  103.139.156.142 (103.139.156.142)  13.973 ms  14.062 ms  14.489 ms
+ 3  103.139.156.141 (103.139.156.141)  23.208 ms  23.219 ms  26.620 ms
+ 4  103.42.72.34 (103.42.72.34)  46.791 ms  46.776 ms  46.760 ms
+ 5  * * *
+ 6  142.250.228.186 (142.250.228.186)  32.184 ms 142.251.49.218 (142.251.49.218)  28.109 ms 142.251.55.62 (142.251.55.62)  25.946 ms
+ 7  108.170.253.105 (108.170.253.105)  25.884 ms 108.170.253.106 (108.170.253.106)  35.950 ms 142.251.60.187 (142.251.60.187)  23.798 ms
+ 8  maa05s28-in-f14.1e100.net (142.250.205.238)  27.270 ms  27.457 ms 74.125.242.129 (74.125.242.129)  24.770 ms
+	
+	
+	
+ping google.com --> ping is , to check whether remote server working or not , it's used to check the remote network connections 	
+	
+
+
+
+--------
+history command
+
+history
+history -c
+
+To delete the last 10 commands from your shell history
+
+history -d $(history | tail -n 5 | awk '{print $1}' | tr '\n' ' '); history -w
+
+
+
+--------
+
+text editors commands :
+----------- 
+ vi or vim 
+ nano  
+  
+  
+vim editor 
+vim file
+i or insert key -> insert mode
+esc -> command mode
+esc -> :q! -> exit  without saving the file
+esc  -> :wq! -> to save and exit from the file 
+esc -> shift +zz -> to save and exit from the file
+
+--
+Normal Mode Commands:
+Moving the Cursor:
+
+h: Move cursor left
+j: Move cursor down
+k: Move cursor up
+l: Move cursor right
+Example: Press h to move the cursor left.
+
+Navigation:
+
+w: Move to the beginning of the next word
+b: Move to the beginning of the previous word
+gg: Move to the beginning of the file
+G: Move to the end of the file
+Ctrl + u: Move half a page up
+Ctrl + d: Move half a page down
+Example: Press w to move to the beginning of the next word.
+
+Editing:
+
+i: Enter insert mode before the cursor
+a: Enter insert mode after the cursor
+o: Open a new line below the current line and enter insert mode
+O: Open a new line above the current line and enter insert mode
+x: Delete the character under the cursor
+dd: Delete the current line
+yy: Copy the current line
+p: Paste the copied or deleted text after the cursor
+u: Undo
+Ctrl + r: Redo
+Example: Press i to enter insert mode before the cursor.
+
+Search and Replace:
+
+/pattern: Search for a pattern
+
+Example: Type /pattern and press Enter to search for a pattern.
+
+n: Move to the next occurrence of the search pattern
+N: Move to the previous occurrence of the search pattern
+:s/old/new/g: Replace all occurrences of "old" with "new" in the current line
+:%s/old/new/g: Replace all occurrences of "old" with "new" in the entire file
+
+
+
+Saving and Quitting:
+
+:w: Save changes
+:q: Quit
+:wq or ZZ: Save and quit
+:q!: Quit without saving
+
+Example: Type :wq and press Enter to save and quit.
+
+Visual Mode Commands:
+
+Entering Visual Mode:
+
+v: Start character-wise visual mode
+V: Start line-wise visual mode
+Ctrl + v: Start block-wise visual mode
+Example: Press v to enter character-wise visual mode.
+
+Selecting Text:
+
+Once in visual mode, use arrow keys or navigation commands to select text.
+Example: In visual mode, move the cursor to select text.
+
+Copy, Cut, and Paste in Visual Mode:
+
+After selecting text in visual mode, press y to copy (yy for the whole line), d to cut, and p to paste.
+
+Example: In visual mode, press y to copy selected text.
+-------------------------------------------------------------------------------------------------------------------------------
+
+
+IMP COMMANDS 
+-------------------------------------------------------------------------------------------------------------------------------
+cut : 
+
+The main use of cut command to split/trim the lines in a file.
+
+based on characters/bytes/Delimiter
+
+1 character = 1 byte , same -c or -b 
+
+fields or  Delimiter( Delimiters are characters or sequences of characters used to separate or define boundaries between different pieces of text or data ex: 
+
+Comma (,) Delimiter: Often used to separate items in a list, typically in CSV (Comma-Separated Values) files.
+
+Whitespace Delimiter: Spaces, tabs, or line breaks used to separate words or fields in text data.
+
+Tab (\t) Delimiter: Used to separate columns in tab-delimited files.
+
+Colon (:) Delimiter: Frequently used in configuration files or to separate key-value pairs.
+
+Semicolon (;) Delimiter: Used in CSV files in some regions as an alternative to a comma.
+
+Pipe (|) Delimiter: Often used to separate fields in data files, such as in the context of Unix pipelines.
+
+Hyphen (-) Delimiter: Used in compound words or as a range separator, e.g., "a-b" or "2010-2020."
+
+Underscore (_) Delimiter: Frequently used in variable and function names in programming.
+
+Forward Slash (/) Delimiter: Used in file paths and URLs to separate directories and components.
+
+Backslash (\) Delimiter: Typically used as an escape character in many programming languages and regular expressions.
+
+Hash (#) Delimiter: Often used to denote comments in code or configuration files.
+
+Double Quotation Marks (") Delimiter: Used to enclose strings, especially in CSV files to handle values containing other delimiters.
+
+Apostrophe (') Delimiter: Used to enclose single characters or strings.
+
+Parentheses (()) Delimiter: Used to group expressions in mathematics and programming.
+
+Braces ({}) and Brackets ([]) Delimiters: Used to enclose blocks of code or define arrays and sets in programming.
+
+Angle Brackets (<>) Delimiters: Often used in HTML to enclose tags.
+
+---
+
+cat file1.txt
+
+hello world
+hi, jhon 
+
+cut -c 5 file1.txt   ->  ( -c -> character 5 -> 5th character in the line, so it displays the 5th character of eachlines in a file  )
+
+cut -c 1-5 file1.txt  -> it display the character from 1st character to 5th character of  each lines 
+
+cut -c 1,3-5 file1.txt  -> it display the character from 1st character, skip the 2nd character  and take 3rd character to 5th character of  each lines , ( 1st,3rd,4th,5th of each lines in a file)
+
+cut -c 3- file1.txt --> it display the character from 3rd character to last character of  each lines 
+
+cut -c -3 file1.txt --> it display the first 3  characters  of  each lines 
+
+---
+delimiter 
+
+1,a,20
+2,a,40
+3,a,60
+
+cut -c 5 file1.txt
+
+cut -d "," -f1 <filename>  --> it cuts the first column and displays . ( -f -> field/column )
+
+1
+2
+3
+
+---
+1-a-20
+2-a-40
+3-a-60
+
+cut -d "-" -f1 <filename>
+1
+2
+3
+
+---
+1,a,20
+2,a,40
+3,a,60
+
+cut -d "," -f1-2 <filename>  --> it cuts the first 2 column and displays them , used to cut the range of fields  ( -f -> field/column )
+
+1,a
+2,a
+3,a
+---
+root@manjunathachar-k-t:~/bashdemo# ll -h
+total 92K
+drwxr-xr-x  3 root root 4.0K Oct 22 17:16 ./
+drwx------ 19 root root 4.0K Oct 22 17:16 ../
+-rwxr-xr-x  1 root root  349 Oct 22 17:16 case1.sh*
+-rwxrwxrwx  1 root root  320 Oct 22 17:11 case.sh*
+-rw-r--r--  1 root root   83 Oct 11 09:55 file1.txt
+-rwxrwxrwx  1 root root  184 Oct 22 13:36 grep.sh*
+-rw-r--r--  1 root root   17 Oct 10 10:31 hardlinkorg2.txt
+-rw-r--r--  1 root root  162 Oct 22 15:39 mem.txt
+drwxr-xr-x  2 root root 4.0K Oct 10 10:07 mywebapp/
+-rw-r--r--  1 root root  10K Oct 10 10:08 mywebartifact.tar
+-rw-r--r--  1 root root    4 Oct 21 16:30 ouputdir1.txt
+-rwxr-xr-x  1 root root  102 Oct 16 10:22 samplearray.sh*
+-rwxr-xr-x  1 root root   77 Oct 16 10:25 sampleshell.sh*
+lrwxrwxrwx  1 root root    8 Oct 10 10:29 soft2.txt -> org1.txt
+lrwxrwxrwx  1 root root    8 Oct 10 10:29 softlink.txt -> org1.txt
+-rwxrwxrwx  1 root root 2.7K Oct 21 15:30 tools.sh*
+-rw-r--r--  1 root root  688 Oct 20 22:14 unistalltool.sh
+-rwxr-xr-x  1 root root   37 Oct 12 10:05 var1.sh*
+-rwxrwxrwx  1 root root  123 Oct 12 10:15 var2.sh*
+-rwxrwxrwx  1 root root   54 Oct 12 10:28 var3.sh*
+-rwxrwxrwx  1 root root   70 Oct 13 09:51 var4.sh*
+---x--x--x  1 root root  392 Oct 13 10:01 var5.sh*
+-rwxr-xr-x  1 root root  530 Oct 13 10:23 var6.sh*
+
+
+ll -h | cut -d "," -f6 
+
+ll -h | awk '{print $5, $9}'   --> to display only 6th and 9th fields ) 
+
+ls -h | awk '{printf "%-15s %s\n", $1,$3, $9}'   -->  to display only 5th and 9th fields with proper format using printf ) 
+
+ls -l | awk '{printf "%-15s %-15s %s\n", $1,$3,$9}
+
+ll -h | awk '{printf "%-6s %s\n", $5, $9}'> filesize.txt 
+
+ll -h | awk '{print $6, $9}' |sed '/^$/d'    --> using caret(care-it) ^ $ to remove the spaces or empty lines  among lines in a file 
+ll -h | awk '{print $6, $9}' | grep -v ^$   
+
+-------------------------------------------------------------------------------------------------------------------------------
+
+find :
+
+man find
+
+find command is used to search and locate the list of files and dir based on conditions you specify for files that match the arguments. find can be used in a variety of conditions like you can find by permissions, users, groups, file type, date, size , etc ...
+
+You can learn about the find command and its options.
+
+
+options :
+1) -name   --> file1. --> to search a file in any dir and whether the file exist or not in local machine 
+
+
+2) -iname
+3) -type f
+4) -type d
+
+--------------------
+
+how this command works 
+
+ex: you want to search a file in your system 
+
+syntax :
+
+find path options 
+
+find   --> this command will list complete path of file and directory in particular dir or system .
+
+find . -name var.sh
+options :
+
+1) -name    --> 
+
+find . -name var.sh    --> 
+
+find . -name "*.sh" 
+
+find / -name "*.pem"  
+
+find / -name context.xml 
+
+
+2) -iname   --> i means  ignore the case sensitive / case insensitive or it considers the uppercase and lower case 
+
+3) -type f   --> to display the regular files 
+
+find . -type f 
+
+----
+1. How to find or search  the last( past) 7 days modified files ?
+
+-mtime --> using this argument we list the last modified files 
+
+-  -> To list files modified within the last 7 days (including today), you can use the -mtime option with -7 ( ex : 27 th-20th)
+
+find . -mtime -7
+
+
++   -> To list files modified between 7 days and 14 days ago but but not within or the last 7 days,  (e.g., files modified from the 7th day to the 14th day ago) ( ex : 20 th -->  13th)  
+
+find . -mtime +7
+
+
+2. How to find the last 60 days modifiled files or created files 
+
+find . -mtime -60
+
+
+3. how to find only hidden regular files 
+
+find . -type f -name '.*'
+
+
+------
+du -> disk usage of file or dir 
+
+df  -> disk usage of file system 
+
+
+3 ways to find the large file in the system 
+
+1.find /home/manjunathachar -type f -exec du -h {} + | sort -rh | head -n 1     -> to find the largest file in the linux
+
+2.sudo du -h /home | sort -rh | head -n 1   -> to find the largest file in the linux
+
+find /home/manjunathachar -type f -exec du -h {} + | sort -h | head -n 1      -> to find the smallest file in the linux
+
+rm /path/to/folder/*.txt      			 -> Delete files using wildcards (e.g., all files with a specific extension):
+
+3. (NCurses Disk Usage):ncdu - >>> more advanced tool for analyzing disk usage of files/folders on local server . It provides a more interactive and user-friendly way to find large files and directories.
+
+sudo apt-get install ncdu   # For Debian/Ubuntu
+sudo yum install ncdu       # For Fedora/CentOS/Red Hat
+
+ncdu /home  
+ncdu -e
+
+find . -inum 34872
+
+
+
+-------------------------------------------------------------------------------------------------------------------------------
+man grep
+
+GREP COMMAND
+
+global regular expression print
+
+basically it searches for a word and print or display the content , according to the option which you have used .
+
+it's going to search a file, content file based pattern 
+
+filter the content of a file
+
+syntax :
+
+grep "searchword" filename
+
+grep is mostly used with piping ( | ).
+
+create file with some content
+apple is my favorite
+my favorites fruits apple ,mango,durian,
+tomato
+chilli
+grapes
+Apple is good for the health
+I eat 4 AppleS in a week .
+
+
+root@manjunathachar-k-t:~/bashdemo# cat grep.sh | grep apple
+apple is my favorite
+my favorites fruits apple ,mango,durian,
+root@manjunathachar-k-t:~/bashdemo# grep apple grep.sh 
+apple is my favorite
+my favorites fruits apple ,mango,durian,
+
+grep -i "apple" grep.sh    --> to search a words with case insensitive or ignore the case sensitive 
+
+grep -v "apple" grep.sh    ->  to display the words which not matching with "apple"  ,
+
+grep -c "apple" grep.sh     -->  to display the counts of line of the word, 
+
+grep -o "apple" grep.sh   --> to display the match words only ( not  with entire lines ) .
+
+grep -n "apple" grep.sh   --> to display the the words with their line numbers  
+
+grep -A1 "apple" grep.sh   --> to display the specific word line with next line only
+
+grep -B1 "apple" grep.sh   ---> to display the specific word line with previous line 
+
+grep -C3 "apple" grep.sh   ---> to display the specific word line with previous line and next line
+
 
 
   
