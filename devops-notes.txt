@@ -1644,5 +1644,1837 @@ grep -B1 "apple" grep.sh   ---> to display the specific word line with previous 
 grep -C3 "apple" grep.sh   ---> to display the specific word line with previous line and next line
 
 
+===========================================
+this command is very important for scripting .
+
+Syntax :
+
+awk ‘BEGIN {start_action} {action} END {stop_action}’ filename
+
+
+awk '{print }' filename 
+
+ls -l | awk '{print $1 $3}'
+
+let me explain about awk command with simple examples
+
+Example 1:
+
+How to print entire  data of the file
+
+cat filename | awk '{print}'
+cat filename | awk '{print$0}'
+
+both "awk '{print}' and awk '{print$0}' " used to print entire data
+
+
+Example 2:
+
+How to print  very first column
+
+cat filename |  awk '{print$1}'     --> to display the first columns 
+
+awk '{print$1}' filename  --> used to print very first column  
+awk '{print$2}' file name -->  used to print second column   --> to print specific multiple columns at a time
+
+awk '{print$2,$3,$4}'   --> used to print 2nd,3rd,4th columns   --> to print specific multiple columns at a time
+
+
+Example 3:
+
+How to print pattern Matching Technique in Awk.
+
+free -m | awk '/Mem/{print}'   --> to print the Mem row 
+
+
+here, we are matching Mem using awk '{/Mem/print}'
+
+Example 4:
+
+How to Print multiple column at the time.
+
+free -h | awk '/Mem/{print$1,$2,$4}'    
+
+here, we are print 1st,2nd,3rd columns at the time.
+
+Example 5:
+
+How to Print line number using variable NR
+
+free -h | awk '{print NR,$0}'
+
+Example 6:
+
+How to print specific linesF
+
+free -h | awk '{print NR,$0}'   --> to print the line with system variables ( NR -> Number of records )
+
+free -h | awk 'NR==1,NR==2 {print NR,$0}'   --> to print the lines from line1 to  line3 with variables 
+
+Here,we are print lines between 1 & 2.
+
+Real time
+
+ll -lrth | awk '{print$9}'       --> to print the specific columns of files ( l- list ,r- reverse , t- time , h- human readable )
+
+ll -lrth | awk '{print$1,$9}'  -->  to print the specific columns of files and their permission ( l- list ,r- reverse , t- time , h- human readable                       
+
+Filter data manipulation
+
+cat listofusers.txt | awk '$4~/M/'
+
+
+cat listofusers.txt | awk '{print NF}'    -> This command prints the value of the last field in each line.
+
+
+cat listofusers.txt | awk '{print (NF-1)}' //second last coloum in a file 
+
+
+Soft Links (Symbolic Links) and Hard Links:
+
+
+/bin/ -> /home/  
+
+
+
+
+Soft Links (Symbolic Links):
+
+Soft links have different inode numbers because they are essentially separate files that point to the target file's path. They are symbolic references.
+
+1. Managing Configurations:
+
+Use soft links to manage configuration files centrally. For example, you have a common configuration file for an application, and each deployment environment requires a slightly different configuration. You can create soft links to the common configuration file in each environment.
+
+
+ln -s /path/to/common/config.conf /path/to/environment/config.conf
+
+2. Versioning and Rollbacks:
+
+Soft links can be used in versioning and rollback scenarios. For instance, you deploy a new version of your application, and the latest configuration is linked to a specific version. If there are issues, rolling back involves switching the soft link back to the previous version.
+bash
+
+ln -s /path/to/versions/v2.0/config.conf /path/to/current/config.conf
+
+3. Dependency Management:
+
+When working with software dependencies, you might use soft links to manage libraries or modules. For example, a deployment might require a specific version of a library, and a soft link can be created to the appropriate version.
+
+ln -s /path/to/libraries/libv1.2.so /path/to/application/lib/lib.so
+
+----
+
+Hard Links:
+
+Hard links, on the other hand, share the same inode number with the original file. They reference the same data blocks on the disk, and changes made to one file are reflected in all files linked to the same inode.
+
+
+1. Efficient Data Backups:
+
+Hard links can be useful for creating efficient backups. Instead of duplicating entire files, hard links can be created to the existing files. This ensures that changes to one file are reflected in the other, while saving storage space.
+
+ln /path/to/source/file.txt /path/to/backup/file_backup.txt
+
+
+2. Shared Log Files:
+
+In a distributed system where multiple components need to write to the same log file, hard links can be used to share the same physical file on disk, providing a unified log view.
+
+ln /var/log/application.log /var/log/component1.log
+ln /var/log/application.log /var/log/component2.log
+
+3. Managing Identical Content:
+
+Hard links are useful when you have multiple instances of identical files across your system. Instead of having multiple copies, hard links allow different filenames to point to the same data blocks.
+
+ln /path/to/common/file.txt /path/to/another/location/file_alias.txt
+
+-----
+
+softlink and hardlink files
+
+
+ls -i file1 file2     -> to get  i nodes for particular files 
+
+find . -inum 12345 -delete    -> deleting files using i node values 
+
+
+
+org1.txt
+
+ln -s org1.txt softlink.txt        -> to create soft link for org1.txt, as soon as u delete the org1 file , softlink file also be  deleted automatically
+
+org2.txt
+
+ln org2.txt hardlink.txt             -> to create hardlink for org2.txt, as soon as u delete the org2 file and hard link will be remain same, it's link copy of org2 file and used for back up for secretes 
+
+----
+cronjob
+
+A cron job is a scheduled task or command that runs automatically at specified intervals on a Unix or Unix-like system, such as Linux. It is used for automating repetitive tasks, such as backups, updates, and maintenance.
+
+
+Crontab:It is used to Schedule jobs.
+
+Crontab –l: -l is used to List out the job for current user.
+
+Crontab –e:-e is used to edit schedule jobs for current user. 
+
+Crontab –r:-r is used to remove all job for current user.      -> note : Don't try this command until unless remove jobs.
+
+Crontab –e –u <Username> : It is used to edit jobs for particular user. 
+
+
+Cat /etc/crontab : It used to check cron job info.
+
+*/1 * * *  * /root/cpu.sh >> output.txt   
+
+   *             *               *                    *            *
+Minute         Hour         Day of month             Month      Day of week  
+(0 - 59)     (0 - 23)         (1 - 31)              (1 - 12)     (0 -6 ) ( sun =0 or 7)
+ 
+ 
+# Example of job definition:
+# .---------------- minute (0 - 59)
+# |  .------------- hour (0 - 23)
+# |  |  .---------- day of month (1 - 31)
+# |  |  |  . ------- month (1 - 12) OR Jan, feb,mar,apr ...
+# |  |  |  |  .---- day of week (0 - 6) (Sunday=0 or 7) OR 
+# |  |  |  |  |
+# *  *  *  *  *    -> time pattern 
+
+Be practice below examples which are very useful in real time environment.
+
+*/1 – Every one minute 
+*/1-   Every one hour
+1-31 Day of the month
+1-12(Jan to Dec)
+0-6(Sunday to Monday) 0Sunday, 1Monday, 2Thesday
+
+
+*  *   * * *    -> for every minutes
+0  *   * * *    -> for every hour 0th min
+0 12   * * *    -> @12 pm(noon) every day
+0  0   8 * *    ->  every month 8th day
+0  3   * * 0    ->  Every sunday
+0 7-18 * * *    ->  b/w 7am to 6 pm
+0 5,8,12 * * *  ->  @5,8,12 
+*/5 * * * *    -> every 5 min interval 
+
+Every day 7-18
+* 7-18 * * *  /root/cpu.sh 
+
+Every month 15,16 dates
+* * 15,16 * *  /root/cpu.sh 
+
+6 Month one time only
+* * * 6 *  /root/cpu.sh 
+Every Tues day
+* * * * 2  /root/cpu.sh 
+
+0
+
+Scheduled Script Execution:  -> Running a script periodically.
+
+# Edit the crontab
+crontab -e
+
+# Run a script every day at 2 AM
+0 2 * * * /path/to/script.sh
+
+
+System Updates:   ->  Automatically updating the system or packages.
+
+# Update system packages every Sunday at 3 AM
+0 3 * * 0 yum update -y
+
+Backup Database:  -> Scheduled backup of a database.
+
+# Backup MySQL database every day at 1 AM
+0 1 * * * /path/to/mysqldump -u username -p password dbname > /path/to/backup.sql
+
+Cleanup Temporary Files:  -> Cleaning up temporary files.
+
+# Cleanup temp files every week on Sunday at 4 AM
+0 4 * * 0 find /path/to/temp -type f -mtime +7 -exec rm {} \;
+
+
+ex:
+
+=============
+useradd -m -d /home/devopsadmin devopsadmin
+
+passwd devopsadmin
+
+su - devopsadmin
+
+ssh-keygen    
+
+ls ~/.ssh 
+
+#You should see following two files:
+
+#id_rsa - private key
+#id_rsa.pub - public
+
+cd /home/devopsadmin/.ssh
+
+cat id_rsa.pub > authorized_keys
+
+chown -R devopsadmin /home/devopsadmin/.ssh
+chmod 600 /home/devopsadmin/.ssh/authorized_keys
+chmod 700 /home/devopsadmin/.ssh
+
+#make devopsadmin user as a owner to tomcat dir :
+
+chown -R devopsadmin /opt/tomcat
+
+
+=============
+
+BASH SCRIPTING : 
+
+
+COMMENTS :
+
+usually , used to describe the functions in the script.
+
+
+#!/bin/bash
+
+# author name : 
+# date 
+# description
+
+# updating the system
+sudo apt-get update -y 
+
+# installing git
+#sudo apt-get install git -y
+
+
+
+
+
+
+
+
+ex : add () {
+...
+....
+}
+if you share the same script to someone with comment , how can they understand , to make it understandable about the funtions, where we use comments
+
+
+types of comments, any language has 2 types of comments except java
+
+2 types
+single line comment
+multi line comment
+
+in java
+//  s l c 
+
+/*
+
+first line code
+second line code
+third line code 
+int a = 23
+
+...   m l c
+*/
+
+documentation related comments
+
+/**
+....
+....
+....   
+*/
+
+c/c++/sh
+
+# --> s l c in shell script
+
+<<stringname
+.....  
+.....
+.....
+stringname
+--------
+<<Manju
+...          m l c in shell script, HERE DOCUMENT FEAUTURE 
+Manju
+
+------
+in bash script 
+in xml file
+
+# -> s l c 
+<!--
+........    m l c 
+........
+-->
+
+
+
+
+in groovy file -> jenkins file 
+
+//  -> s l c 
+
+/*
+
+
+*/
+
+
+in yaml file
+
+
+# 
+
+
+
+
+
+comments are used to escape from the code 
+this part of the code will be ignored by the program interpreter
+adding comments make things easy for the programmer, while editing the code in future
+
+single line comment can be do using #
+# this line is commented 
+
+multiline comments can be do using HERE DOCUMENT feature as  follows
+
+
+-------------
+
+VARIABLES :
+
+A Variable is a character, string to which we assign a value. the value assigned could be a number text,filename, device, or any other type of data.
+
+there are 2 types of variable in linux shell script
+
+1. system pre defined variables
+2. user defined variables   -> 
+3. env variables 
+
+10
+
+in shell script
+
+vim file.sh
+
+var1=10
+
+echo $var1
+
+./file.sh
+
+
+in python
+a=10
+print(a)
+output : 10
+
+echo $a
+
+SHELL=
+
+echo $SHELL
+
+
+$var1   -> is to define and display  the value of the variable 
+
+
+
+
+
+1.system pre defined variables and env 
+--------------------------------
+command to display the  system defined variables
+
+env
+
+printenv
+
+
+System Predefined Variables:
+
+$HOME: The home directory of the user.
+$USER: The username of the current user.
+$PWD: The present working directory.
+$SHELL: /bin/bash The path to the shell.
+$PATH : usr/bin/
+
+
+/bin/bash -> echo ls, 
+
+/usr/bin/  git , mvn, 
+
+git add .
+git rm 
+git commit 
+
+Common Environment Variables for DevOps: -> user defined variables 
+
+$JENKINS_HOME: The Jenkins home directory, where Jenkins stores its configuration and data.
+$JAVA_HOME: As seen in the script, it points to the Java installation directory.
+$PATH: The search path for executable files.
+$AWS_ACCESS_KEY_ID and $AWS_SECRET_ACCESS_KEY: AWS credentials for interacting with AWS services.
+$DOCKER_HOST and $DOCKER_CERT_PATH: Variables used for Docker configuration.
+
+
+how can you store the sensitive credentials of any project on local system
+
+1. set up env variable directly 
+
+2. create .env file , and store the credential 
+
+--------------
+
+myplace=bangalore 
+
+
+bash program -> it's always going to validate the commands( /bin/bash) and variables( .bashrc and or (.bash_profile or .profile)
+
+
+there two system configuration files in linux
+
+.bashrc   -
+.profile   ( in debian )
+.bash_profile ( in fedora )
+
+.bashrc  -> bash resource configuration file -> java,git,jenkins,maven  , 
+
+ls, echo $USER , ./var.sh    ->  
+
+echo $myplace
+
+
+
+echo $JAVA_HOME
+echo $MAVEN_HOME 
+
+export -> It's a function that used to define the USER DEFINED VARIABLE in .bashrc or .bash_profile 
+
+export JAVA_HOME=/usr/lib/jvm/OpenJDK:11
+export MAVEN_HOME=/opt/maven
+export myplace=bangalore
+
+
+.profile ->
+
+# -> root user
+$ -> normal user
+/ -> root home dir
+~ -> /home/manjunathachar  dir 
+
+~/.bashrc
+~/.profile
+
+source ~/.bashrc 
+source ~/.profile 
+ 
+ 
+ 
+VARIABLENAME=VARValue
+
+echo $HISTSIZE
+1000
+
+see here, history size is 1000(The value "1000" in the context of HISTSIZE means that your shell (such as Bash) is configured to retain the last 1000 commands you've executed in its command history. This is the maximum number of commands that will be stored in the history list.) by default, is this possible to change size , yes , where we use export command
+
+
+export function ,
+
+it's a statement , which used to pass enviroment variables to other process
+
+export HISTSIZE=20000
+echo $HISTSIZE 
+
+---
+
+MYTEAM=RCB
+echo $MYTEAM
+
+printenv MYTEAM
+
+export MYTEAM
+
+printenv BBTEAM
+
+export HISTSIZE=20000,this is for temporary changes, once you reboot the system, it will consider the default 1000, if you want to make it permanently, 
+
+where we use .bashrc or .bash_profile
+
+
+
+In Linux, both .bashrc and .bash_profile are configuration files related to the Bash shell, and they play a role in customizing the shell environment for users.
+
+.bashrc: shell -> bash shell( resource or tools ) level configuration 
+
+This file is often referred to as the Bash Resource Configuration file.
+
+It is specific to each user and is usually located in the user's home directory (~/.bashrc).
+
+It is executed every time a new terminal session is started or a new shell is opened.
+
+It typically contains settings and configurations for the Bash shell, such as aliases, prompt configurations, and environment variables.
+
+.bash_profile or .profile    -> system level configuration 
+
+This file is executed when you log in to the system.
+
+It is also specific to each user and is usually located in the user's home directory (~/.bash_profile).
+
+If .bash_profile exists, Bash will execute it and ignore .bashrc during login.
+
+It is commonly used to set environment variables and perform tasks that should only happen once when you log in.
+
+Relationship between .bash_profile and .bashrc:
+
+When you start a login shell (for example, when you log in to the system), .bash_profile is executed.
+
+For non-login shells (such as opening a new terminal window or running a script), Bash will look for and execute .bashrc.
+
+
+demo.sh   -> #!/bin/bash
+
+
+etc/profile    -> 
+
+vim .bashrc or .bash_profile
+
+export HISTSIZE=20000
+
+-----------------------------------------------------
+
+in programming language-- data types
+
+
+int -> -30000 to 33000 it's exact number, short number 
+float -> 1.2 it's very short decimal number , 0.1
+boolean -> true(1) or false(0)
+string  -> "hi, some text"
+decimal -> 75656387937579797.098038080929 it's verybig exact decimal 
+double -> very big number
+
+
+
+2. user defined variables ,( for best practice we use lower case as variable name,u can also upper case )
+
+-----------------------
+a = 10
+echo $a
+output is 10
+
+$variable  -> value of variable
+
+$(name of command) ->  value of linux system pre defined commands (echo cat rm rf  mv cp mkdir)
+
+date= $(date)
+echo $a or echo ${a}
+w_d= $(pwd)
+echo $a
+user_id=$(id -u)
+
+user_id=4748484 
+
+
+
+
+How can you assign the predefined command to variable ?
+
+
+DATE=$(date)    $(name of command)      $(date +%a)  
+
+echo $DATE
+
+
+name=manjunath
+
+date 
+
+echo 
+ls
+pwd
+
+a=10
+echo $a
+echo $date
+
+
+
+
+
+ 
+
+a=$(system defined command) means a=$(date)
+
+echo $a
+output is today's date .
+
+user_id=$(id -u ) 
+echo $user_id
+output is 1000->normal user
+output is 0 -> root user
+
+
+
+
+system pre defined commands / env variables / user defined variable /special variables ($#@!?) , $? -> exit status 
+
+
+
+
+
+it's customized user variabls,
+
+ex: int data type
+
+in c/cpp/java
+
+declaring the variables
+int a;
+int b;
+int c;
+
+a=10
+
+str
+
+
+initialisation the variables,( creating and assigning the value to variables )
+int a = 10;
+int b = 20;
+int c = 30;
+
+
+
+in shell script there is no data type in shell script like this 
+
+in shell script
+
+a=10  ( there is no space between variable name and value ) 
+b=34
+c=45
+
+echo $a or echo ${a}
+
+a=10
+b=20
+c=30
+b=23
+
+echo $a
+echo $b 
+echo $c
+echo $b
+
+---
+manjunathachar@manjunathachar-k-t:~/linuxdemo$ ./ee.sh 
+10
+23
+30
+23
+---
+manjunathachar@manjunathachar-k-t:~/linuxdemo$ cat ee.sh 
+a=10
+b=20
+c=30
+b= 23
+echo $a
+echo $b 
+echo $c
+echo $b
+--------------
+shell script override the values ,will consider last one 
+
+if you want to print with some message
+
+echo "the value of c is : $c"
+
+============================================ 
+
+let's use system defined ( can we use system defined variables in shell script, yes we can )
+
+
+echo "the username is : $USER "
+echo " the shell name is : $SHELL "
+
+
+
+---
+manjunathachar@manjunathachar-k-t:~/linuxdemo$ ./sysvariable.sh 
+the username is : manjunathachar 
+ the shell name is : /bin/bash 
+---
+============================
+
+
+can i assign the user defined variable to system defined variable , YES I CAN 
+
+whenever you are going to assign system defined variables or env variables and pre defined commands , you have to use $ sign as prefix  
+
+DATE=$(date)   -> assigning the value of system defined command to user defined variable
+name=$USER     -> assigning the value of env variable to user defined variable
+place=bangalore ->  assigning a normal value  to user defined variable
+
+
+
+
+
+echo "${name}"
+
+==================================
+
+
+1. how can you directly  create varibales and assign the values inside the shell scripting ?
+
+
+#!/bin/bash
+
+NAME=Ramesh          #don't give a space 
+echo "hi, ${NAME}"   # $NAME OR ${NAME} This is comment
+
+NAME="Ramesh"
+echo ${NAME}
+
+
+bash var1.sh
+sh var1.sh
+./var1.sh  
+
+
+2. how can you run  a command inside the shell script and get the value inside the variable ?
+
+
+date: 08/02/2024 , 08-02-2024 ,
+
+
+
+#!/bin/bash
+
+DATE=$(date +%F)    # syntax is DATE=$(name of command)
+
+DATE=$(date +%a)
+DATE=$(date +%A%B)
+DATE=$(date +%b)
+DATE=$(date +%B)
+DATE=$(date +%c)
+DATE=$(date +%C)
+
+       %%     a literal %
+
+       %a     locale's abbreviated weekday name (e.g., Sun)
+
+       %A     locale's full weekday name (e.g., Sunday)
+
+       %b     locale's abbreviated month name (e.g., Jan)
+
+       %B     locale's full month name (e.g., January)
+
+       %c     locale's date and time (e.g., Thu Mar  3 23:05:25 2005)
+
+       %C     century; like %Y, except omit last two digits (e.g., 20)
+
+       %d     day of month (e.g., 01)
+
+       %D     date; same as %m/%d/%y
+
+       %e     day of month, space padded; same as %_d
+
+       %F     full date; like %+4Y-%m-%d
+
+
+
+echo "today's date is ${DATE}"
+
+
+date 
+
+DATE=date -> assigning the value to DATE variable
+DATE=$(date)   -> assigning the value of command to DATE variable
+
+
+how can you assign system predefined command to user defined variable ?
+
+DATE=$(date)
+
+
+id -u 
+
+USER=$(id-u)
+
+echo $USER    -> 
+
+------------------------------
+
+COMMAND LINE ARGUMENTS(values)
+----------------------
+
+During shell script execution, values passing through command prompt is called as command line arguments
+
+
+variable_name=value for the variable
+key=arg
+name="Jhon"   -> hard coding 
+name="$1" 
+
+
+passing the values during the bash script execution  -> ./scriptname.sh 
+
+for ex:
+
+while running a shell script , we can specify the command line arguments as "shell scriptfile.sh arg1 arg2 arg3
+
+
+While using command line arguments follow the below important points
+
+we can specify n number of arguments , there is no limitation.
+
+each argument is separated by space .
+
+
+ex: i have a dbbackup.sh ,this file is for backup of your database, 
+
+earlier we used to do hard coding in script , 
+
+requirement, 
+
+you have different databases, want to store to some location . 
+
+./dbbackup.sh dbname dbloc
+
+
+$0 -- shell script name
+$1 --. first arg
+$2  --> 2nd arg
+$3   --> 3rd arg --> if there is no value for arg, it wont diplay anything.
+$20
+echo ${20}  --> if u want to get particular arg, and if it's morethan one digit, use curly braces  
+
+how to get number of arg :
+
+
+./sample.sh arg1 arg2 
+
+in script
+
+echo $#  --> to get number of args    
+echo $*  --> to  o display the all the arguments as single string 
+
+echo $@ --> to display the all the arguments as individual string 
+
+
+echo $$ --> to display the process ids(PIDS)
+
+echo $? (imp)--> to display the previous command execution status or exit status (  1 to 127 standard error code for 	) 
+
+----
+
+
+3. How can you pass the values to the shell script from outside through args/arguments.( it's another way of passing values to the variables)
+
+
+$0,$1,$#,$$,$?,$*,$@
+
+ hi ramesh Good morning
+
+
+in shell script: values take like ramesh($1), suresh($2), sachin($3)
+		          
+		          
+		          
+		          
+i want output like hi John  Good morning -----> (./v3.sh ramesh morning)
+
+#!/bin/bash
+NAME=$1
+WISH=$2
+
+echo "hi, ${NAME} Good ${WISH}"
+
+------------------
+vim clargs.sh  john bangalore 25 
+
+#!/bin/bash
+
+echo "c l args demo"
+echo "script file name : $0"
+echo "first arg : $1"
+echo "Second Arg : $2"
+echo "3rd arg : $3"
+echo "10th arg : ${10}"
+echo "number of args : $#"
+echo "All the args : $*"
+echo "All the args : $@"
+echo "pids : $$"
+echo "previous cmd execution status : $?" 
+
+
+
+
+=================================================================================================
+
+
+4 .how can you ask user to enter the values dynamically . i.e. read command 
+
+user input or user prompt 
+
+
+echo "Enter your Pin"   5758
+read PIN     -> INVISIBLE
+echo "select your bank account"
+read YOUR_BANK_ACCOUNT_TYPE    -> Saving bank
+echo "Enter the amount"
+read YOUR AMOUNT     -> VISIBLE 
+
+
+
+
+
+
+ex: running a script that connect to DB , where it asks username and password
+
+#!/bin/bash
+echo "please enter your name"
+read -s USERNAME                             #(if you don't use -s, it will show user name while user entering his name , people can see while he is entering , that's y where we use -s to hide  user name while user entering his user name )
+echo "user name is : ${USERNAME}"        # here echo command no need to use for user , because it displays the user name 
+echo "please enter your password"
+read -s PASSWORD
+echo "password is : ${PASSWORD}"         # here echo command is not recommanded to use for password , because it displays the password name
+
+==================================================================================================================================
+
+array -> list of elements or a group of same type of variables 
+
+element -> object,aspect , thing,
+
+forward indexing -> 0th element
+backward indexing -> -1 
+0th value
+
+
+
+ex :                Fruits = apple , banana , orange, mango, ( here we count element with indexing i .e begins with  0th element as first element ) 
+
+forward indexing              0        1        2     3  
+
+backword indexing            -4       -3       -2    -1
+
+                
+   forward indexing   -> begins with left to right  -> start with 0th element       
+   backword indexing  -> begins with right to left  -> start with -1th element 
+
+sudo vim array.sh
+#!/bin/bash
+FRUITS=("apple" "banana" "orange" "mango")    # array should be separated by spaces not COMMAS .
+echo "fruits at 0th element is : ${FRUITS[0]}"
+
+----------------------------------------------------------------------------------------------------------------------------------
+
+ARITHMETIC OPERATIONS
+---------------------------
+
+
++
+_
+
+*
+/
+
+`expr opt1 + opt2`
+`expr 2 + 5`
+
+
+
+a=2
+b=3
+c=a+b
+echo $c
+
+
+
+
+
+
+we use the keyword "expr" to perform arithmetic operations . 
+
+
+syntax:
+
+`expr op1 math-operator op2`
+
+
+
+
+
+FileName: arithmetic_operation.sh
+
+`expr 3 + 2`   Addition:
+expr 3 - 2   Subtraction:
+expr 10 / 2   Division:
+expr 3/* 2  --> we use / it's a escape character ,  Multiplication:   * wild card 
+expr 20 % 3  --> Modulus (Remainder): it's modular operator, it gives reminder , if it's not divisible by exact number.
+
+
+echo additon of 3 and 2 is : `expr 3 + 2`
+
+Note : there must be spaces between the operations and the expression.
+
+for example: 3+2 is not correct
+
+it should be written as 3 + 2
+
+complete expression should be enclosed between ``, called the inverted commas,(two backticks)
+
+echo " the addition of 2 and 3 :   expr 2 + 3 " ❌️ --> it's going to print as it as , wont get result 
+echo " the addition of 2 and 3 : 'expr 2 + 3' " ❌️ --> it's going to print as it as , wont get result 
+echo " the addition of 2 and 3 : `expr 2 + 3` " ✅️ --> using this one , will get result as u expected
+
+-----
+vim argops.sh
+
+expr 3 + 2 
+expr 3 - 2
+expr 10 / 2
+expr 3/* 2  
+expr 20 % 3 
+
+
+write a shellscript to accept the 2 numbers from the user and perform the aruguments operators
+
+./argops.sh 34 54 
+
+expr $1 + $2
+expr 3 - 2
+expr 10 / 2
+
+===============
+
+comparison operators / hints/clue for operators:
+
+= -> to assign the value to variable 
+
+
+
+ex: a=10
+
+
+
+-eq -> equal to    -> $a -eq 10   -> True
+-gt -> greater than -> $a -gt 10  -> False
+-lt -> lesser than  -> $a -lt  10 -> False
+-ge  -> greaterThan  or equal to   -> $a -ge 10  -> True 
+-le  -> lesserThan or equal to     -> $a -le 10  -> True 
+
+
+-eq  --> ==  --> equal to 
+-ne  --> !=  --> not equal to 
+-lt  --> <   --> lesser than
+-gt  --> >   --> greater than
+-le  --> <=  --> lesser than or equal to 
+-ge  --> >=  --> greater than or equal to 
+--------------------------------------
+
+#!/bin/bash
+
+echo "hi"
+pwd
+ls
+
+
+echo "hello'
+
+echo "good morning"
+
+
+
+which command is used to get previous command execution status ??
+
+$0  -> 
+$# 
+$? -> exit code status  -> 1 to 127 ( failure )  , 0 ( success code )
+
+
+control statement ?
+
+
+
+
+
+
+unfortunately shell don't care the error it will just move forward whether the command is correct or not , ultimately consider the last command 
+
+
+so , it's our responsibility to check the commands are executed successfully or not
+
+$? -- > (exit code ) 0 is success, if morethan 0 is failure (1 to 127)
+$? -> previous command execution status , 
+
+if execution is failed -> status would be between 1 to 127
+if execution is succeed -> status would be 0
+
+statements -> executable instructions , 
+
+-------
+
+CONTROL FLOW STATEMENTS :
+
+simple if 
+if else
+if elif 
+nested if 
+
+loop
+ for loop
+ while loop
+ 
+switch cases
+functions
+
+
+
+simple if condition
+
+function_name() {
+
+
+}
+        
+to express any condition , you must have atleast one variable 
+
+if [expression] ;
+then
+these commands run when expression is true 
+fi
+
+
+--------------------
+
+USER_ID=$(id -u)
+
+if [ $USER_ID -eq 0 ] ;
+then
+echo "user has root access"
+
+fi 
+
+
+========
+
+there are two different way to pass the value to variable dynamically 
+
+1. using command line arg   ./scriptname.sh  arg1
+2. using read command  
+a. 
+echo "enter a number "
+read number
+
+if [ $number -ge 20]
+
+--
+b.
+
+read -p " enter a number " number
+
+if [$number -ge 20]
+
+
+
+#!/bin/bash
+
+read -p "Enter a number: " num
+
+# Simple if condition
+if [ $number -gt 10 ]; then
+    echo "The number is greater than zero."
+fi
+
+
+
+
+if (expression) {
+ sudo yum install git -y
+} 
+
+id -u -> normal user -> 1000
+id -u -> root user -> 0
+
+-eq -> equal to 
+-gt -> greater than
+-lt  -> lesser than
+-ge  -> greaterThan or equal to 
+-le  -> lesserThan or equal to 
+
+
+USER=$(id -u)
+
+if [$USER -eq 0] 
+ then 
+  echo "congrats, you have root access you can proceed"
+  
+fi
+
+switch cases:
+case 
+esac
+
+
+
+
+
+if the expression is false the function is not run at all 
+
+-----------------------------------------------------------------
+
+1. Simple if-else script:
+
+#!/bin/bash
+
+read -p "Enter a number: " num
+
+if [ $num -gt 10 ]; then
+  echo "The number is greater than 10."
+else
+  echo "The number is not greater than 10."
+fi
+
+
+Explanation:
+
+This script takes a number as input from the user.
+It checks if the number is greater than 10.
+If the number is greater, it prints "The number is greater than 10." Otherwise, it prints "The number is not greater than 10."
+
+=================================================================================================================================
+if else function
+
+Simple if-else script:
+
+Purpose: It helps the computer make a decision based on whether a condition is true or false. If the condition is true, one action is taken; if false, another action is taken.
+
+Real-time example: Think of a traffic light. If the traffic light is green, you can go (condition is true), but if it's red, you must stop (condition is false).
+
+
+if (expression) {
+these commands run when expression is true 
+} 
+else {
+these commands run when expression is false
+}
+
+
+
+if (exit code is 0 ) {
+then print successfully installed
+}
+else{
+then print failure
+} 
+------------
+
+
+conditions :
+
+write a script to pass only two args 
+
+system pre defined argument or special varibles 
+$0
+$1
+$2
+$# -> no.of agrs
+$? -> previous command execution status
+$@ -> name of args
+@* -> name of args 
+
+
+
+
+if [ $# -eq 2 ] then
+
+echo " this is my first args : $1 "
+echo " this is my second args : $2 "
+echo " this is my 3rd args : $3 "
+
+else
+
+echo "please pass exact two args"
+echo " Usage : ex:  bash $0  manju achar 
+
+fi
+
+
+
+if [ $# -eq 2 ]
+then 
+echo "c l args demo"
+echo "script file name : $0"
+echo "first arg : $1"
+echo "Second Arg : $2"
+echo "3rd arg : $3"
+echo "10th arg : ${10}"
+echo "number of args : $#"
+echo "All the args : $*"
+echo "All the args : $@"
+echo "pids : $$"
+echo "previous cmd execution status : $?"
+else
+echo "you shoudl pass the 2 args.."
+echo "usage : sh $0 dbname dbbloc"
+
+fi
+
+-----------
+
+java --version
+
+if [ $? -eq 0 ]
+then 
+echo "java already installed"
+echo "installing the maven...."
+else
+echo "java is not installed.."
+echo "install the java first then install the maven"
+
+fi 
+
+==================
+
+
+
+
+3. If-elif :   -> if with multiple else condtions 
+
+If-elif script:
+
+this is used when you have multiple conditions to check , and you want the computer to choose the first condition that's true, and execute the corresponding actions
+
+
+if elif -> it has single main /outer condition with multiple options 
+
+
+#!/bin/bash
+
+read -p "Enter age: " age
+
+if [ "$age" -le 18 ];    # space needed before the closing square bracket
+then
+  echo " the ticket price is Rs. 250."
+elif [ "$age" -ge 19 ] && [ "$age" -le 60 ];  # space needed before and after square brackets
+
+then
+  echo "the ticket price is Rs. 350."
+else
+  echo "the ticket price is Rs. 200."
+fi
+
+--------------------
+
+
+
+#!/bin/bash
+read -p "Enter a age: " age
+
+if [ $age -gt 18 ]; then
+  echo "the person is adult."
+elif [ $age -eq 18 ]; then
+  echo "the person is senior citizen."
+else
+  echo "The person is not adult."
+fi
+
+
+
+
+Explanation:
+
+This script also takes a number as input.
+It checks if the number is greater than 10. If yes, it prints "The number is greater than 10."
+If the number is not greater than 10, it checks if it's equal to 10. If yes, it prints "The number is equal to 10."
+If it's neither greater than 10 nor equal to 10, it prints "The number is less than 10."
+-----------
+
+EXAMPLE :3 for if elif 
+
+
+#!/bin/bash
+
+echo "Welcome to the deployment script!"
+
+echo "Which environment are you deploying to? (dev, staging, prod)"
+read environment
+
+if [ "$environment" == "dev" ]; then
+    echo "Deploying to dev environment..."
+    
+    # Additional commands for deploying to dev
+    
+elif [ "$environment" == "staging" ]; then
+    echo "Deploying to staging environment..."
+    
+    # Additional commands for deploying to staging
+    
+elif [ "$environment" == "prod" ]; then
+    echo "Deploying to production environment..."
+    
+    # Additional commands for deploying to production
+else
+    echo "Invalid environment specified!"
+fi
+
+
+----------------------
+
+4.nested if  --> multiple if statements can be nested with in if statements .
+
+when you have conditions within conditions, like making more specific decisions based on previous decisions
+
+if it's with in budget( outer condition), if it's, if  it has good milege ( inner condition1), and if it's  safe model ( inner condition2), if both these conditions are true , you decide to buy it 
+
+
+purpose: It's used when you have conditions within conditions, like making more specific decisions based on previous decisions.
+
+Real-time example: Imagine you're buying a car. First, you check if it's within your budget (outer condition). If it is, you check if it has good mileage (inner condition 1) and if it's a safe model (inner condition 2). If both these conditions are true, you decide to buy it.
+
+EXAMPLE: 1
+
+#!/bin/bash
+
+read -p "Enter your age: " age
+
+if [ $age -ge 18 ]; then
+  echo "You are an adult."
+  if [ $age -ge 65 ]; then
+    echo "You are a senior citizen."
+  else
+    echo "You are not a senior citizen."
+  fi
+else
+  echo "You are not an adult."
+fi
+
+Explanation:
+
+This script takes your age as input.
+
+It first checks if you are 18 years or older. If yes, it prints "You are an adult."
+If you are an adult, it further checks if you are 65 years or older. If yes, it prints "You are a senior citizen."
+If you are an adult but not 65 or older, it prints "You are not a senior citizen."
+If you are not 18 or older, it prints "You are not an adult."
+These scripts showcase the use of if-else statements and nested if-else statements to make decisions and execute different actions based on conditions.
+
+==========
+
+# !/bin/bash
+
+if [ $# -ne 1 ]
+then
+        echo "You need to enter the year."
+        exit 1
+fi
+
+year=$1
+
+if [ $[$year % 400] -eq "0" ]
+then
+        echo "$year is a leap year!"
+elif [ $[$year % 4] -eq 0 ]
+then
+        if [ $[$year % 100] -ne 0 ]
+        then
+                echo "$year is a leap year!"
+        else
+                echo "$year is not a leap year."
+        fi
+else
+        echo "$year is not a leap year."
+fi
+
+
+*********************************************************
+
+# !/bin/bash
+Balance=900
+if ((Balance < 0)); then
+  echo "Balance is less than zero, Please add more funds else you will be charged penalty"
+elif ((Balance == 0)); then
+  echo "Balance is zero, please add funds"
+else
+  echo "Your balance is above zero."
+fi
+
+
+*********************************************************
+
+#!/bin/bash
+read -p "Enter theory marks: " quiz_marks
+read -p "Enter practical marks: " assignments_marks
+if (($quiz_marks > 50));
+then
+  echo "Please check the input marks for quiz."
+elif (($assignments_marks > 50));
+then
+  echo "Please check the input marks for assignments."
+else
+  echo " Your total marks: sum=$(( quiz_marks + assignments_marks))"
+fi
+
+
+*********************************************************
+Loops are used in any programming language to execute the same code repeatedly. Three types of loops are mainly used in programming for doing repetitive tasks. These are for, while, and do-while/repeat-until loop. You can apply for loop on bash script in various ways. Some useful BASH for loop examples has been mentioned in this article.
+
+Syntax of for loop:
+
+# loop through a list
+for value in list
+do
+    commands
+done
+
+# loop specified values
+for value in file1 file2 file3
+do
+    commands
+done
+
+# loop through strings resulting from a command
+for value in $(Linux command)
+do
+    commands
+done
+
+# loop through increment or decrement numbers
+# traditional procedural for loop
+for (( i=0; i<10; i++)
+do
+    commands
+done
+
+According to the above syntax, the starting and ending block of for loop is defined by do and done keywords in the bash script.
+
+Example-1: Reading static values
+Create a bash file named loop1.sh with the following script to read the values from a list using for loop. In this example, 5 static values are declared in the lists. This loop will iterate 5 times, and each time, it will receive a value from the lists and store it in the variable named color that will print inside the loop.
+
+
+#!/bin/bash
+# Define loop to read string values
+for color in Blue Green Pink White Red
+do
+    # Print the string value
+    echo "Color = $color"
+done
+
+
+Example-2: Reading Array Variable
+
+You can use for loop to iterate the values of an array. Create a new bash file named loop2.sh with the following script. In this example, the loop retrieves the values from an array variable named ColorList, and it will print the output only if the Pink value is found in the array elements.
+
+
+#!/bin/bash
+# Declare and array
+ColorList=("Blue Green Pink White Red")
+# Define loop to  iterate the array values
+for color in $ColorList
+do
+    # Check the value is pink or not
+    if [ $color == 'Pink' ]
+    then
+            echo "My favorite color is $color"
+    fi
+done
+
+
+
+Example-3: Reading Command-line arguments
+
+Command-line arguments values can be iterated by using for loop in bash. Create a new bash file named loop3.sh with the following script to read and print the command-line argument values using for loop.
+
+#!/bin/bash
+# Define loop to read argument values
+for myval in $*
+do
+    # Print each argument
+    echo "Argument: $myval"
+done
+
+
+
+
+Example-4: Finding odd and even number using three expressions
+
+The C-style syntax of for loop is three expression syntax. The first expression indicates initialization, the second expression indicates termination condition, and the third expression indicates increment or decrement. Create a bash file named loop4.sh with the following script to find out the odd and even numbers from 1 to 5.
+
+
+#!/bin/bash
+
+# Define for loop in C-style format
+for (( n=1; n<=5; n++ ))
+do  
+    # Check the number is even or not
+    if (( $n%2==0 ))
+    then
+        echo "$n is even"
+    else
+        echo "$n is odd"
+    fi  
+done
+
+=,-,/,* = %
+
+
+Example-5: Reading file content
+
+You can use for loop to read the content of any file by using the ‘cat’ command. Suppose you have a file named ‘weekday.txt‘ which contains the name of all weekdays. Now, create a bash file named loop5.sh to read and print the content of the file.
+
+#!/bin/bash
+# Initialize the counter
+i=1
+# Define for loop to read the text file
+for var in `cat weekday.txt`
+do
+    # Print the file content
+    echo "Weekday $i: $var"
+    ((i++))
+done
+
+
+Example-6: Create infinite for loop
+
+Create a bash named loop6.bash with the following script to know the way to declare infinite for loop. Here, the loop will iterate for infinite times and print the counter value until the user presses Ctrl+C.
+
+#!/bin/bash
+# Initialize counter variable
+counter=1
+# Display message for termination
+echo "Press Ctrl+c to terminate from the loop"
+# Define infinite loop
+for (( ;; ))
+do
+   # Print the number of iteration
+   echo "Iterating for $counter time(s)."
+   # Wait for 1 second
+   sleep 1
+   # Increment the counter
+   ((counter++))
+done
+
+
+
+Example-7: Use of for loop with command substitute
+
+Create a bash file named loop7.bash with the following script to know the use of for loop to read and print the command output.
+
+#!/bin/bash
+echo "All bash files starting with 'a' are:"
+
+# Read the output of command substitute using for loop
+for val in $(ls a*.bash)
+do
+    # Print the file name
+    echo "$val"
+done
+
+
+Example-8: Conditional exit with break
+
+Create a bash file named loop8.bash with the following script to know the way to exit from the loop based on any particular condition.
+
+#!/bin/bash
+# Define a for loop to iterate 10 times
+for (( i=1; i<=10; i++ ))
+do  
+    # Define the conditions to terminate the loop
+    if (( $i%3==0 && $i%6==0 ))
+    then
+        # Terminate from the loop
+        echo "Terminated."
+        break
+    else
+        # Print the current value of i
+        echo "The current value of i is: $i"
+    fi  
+done
+
+Example-9: Early continuation with continue statement
+
+Create a bash file named loop8.bash with the following script to know how to omit one or more statement(s) from the loop by using a continuous statement based on the particular condition.
+
+#!/bin/bash
+# Declare an associative array
+declare -A Applicants
+# Intialize the array values
+Applicants=( [1022]="Present" [1034]="Present" [1045]="Absent" [1067]="Present" )
+
+echo "List of the applicant's ID who are present:"
+for k in ${!Applicants[@]}
+do
+     # Filter the applicant's ID who are absent
+     if [ ${Applicants[$k]} == "Absent" ]; then
+        continue
+     else
+        # Print the applicant's ID who are present
+        echo $k
+     fi
+done
+
+
+echo "enter number"
+read num
+function prime
+{
+for((i=2; i<=num/2; i++))
+do
+  if [ $((num%i)) -eq 0 ]
+  then
+    echo "$num is not a prime number."
+    exit
+  fi
+done
+echo "$num is a prime number."
+}
+r=`prime $number`
+echo "$r"
+
+
+
+=================================================================================================================================
+
+EXPLAIN THE FREE COMMAND 
+
+
+As a DevOps engineer, your role involves optimizing the performance and reliability of systems while ensuring smooth deployment and operation of software applications. Let's see how cache memory and swap memory are relevant from a DevOps perspective:
+
+Cache Memory:
+
+Purpose: Utilizing cache memory effectively can significantly enhance the performance of applications and services deployed on your infrastructure. It helps reduce latency by storing frequently accessed data closer to the CPU, minimizing the need to retrieve it from slower storage devices.
+
+Example: Consider a DevOps engineer responsible for managing a microservices-based architecture. By configuring caching mechanisms within the application stack, such as using Redis or Memcached, you can speed up data retrieval and reduce the load on backend databases. This not only improves application performance but also optimizes resource utilization across your infrastructure, leading to better scalability and cost-effectiveness.
+
+Swap Memory:
+
+Purpose: Swap memory plays a critical role in maintaining system stability and ensuring uninterrupted operation, especially during periods of high resource demand or unexpected spikes in traffic. Effective management of swap space can prevent out-of-memory issues and mitigate the risk of application failures due to memory exhaustion.
+
+Example: As a DevOps engineer, you may encounter scenarios where certain applications or services experience sudden surges in memory consumption, potentially leading to performance degradation or system crashes. By monitoring swap usage metrics and implementing proactive measures, such as optimizing resource allocation, scaling infrastructure resources, or fine-tuning application configurations, you can preemptively address memory-related bottlenecks and maintain reliable service delivery.
+
+In summary, as a DevOps engineer, understanding the role of cache memory and swap memory is essential for optimizing system
+performance, enhancing application reliability, and effectively managing resources across your infrastructure to meet the demands of modern, dynamic environments.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
